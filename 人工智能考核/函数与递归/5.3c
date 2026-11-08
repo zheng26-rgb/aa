@@ -1,0 +1,39 @@
+#include<stdio.h>
+int isPrime(long long x)
+{
+    if(x<=1)
+        return 0;
+    for(long long i=2;i*i<=x;i++)
+    {
+        if(x%i==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+long long buildpal(long long t)
+{
+    long long res=t;
+    long long temp=t/10;
+    while(temp>0)
+    {
+        res=res*10+temp%10;
+        temp=temp/10;
+    }
+    return res;
+}
+int main()
+{
+    long long t;
+    scanf("%lld",&t);
+    long long num=buildpal(t);
+    if(isPrime(num))
+    {
+        printf("prime\n");
+    }
+    else
+    {
+        printf("noprime\n");
+    }
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<limits.h>
+long long a[100000];
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    while(T--)
+    {
+        int n;
+        scanf("%d",&n);
+        long long maxv=LLONG_MIN;
+        long long minv=LLONG_MAX;
+        double sum=0;
+        for(int i=0;i<n;i++)
+        {
+            scanf("%lld" ,&a[i]);
+            if(a[i]>maxv)maxv=a[i];
+            if(a[i]<minv)minv=a[i];
+            sum+=a[i];
+        }
+        double avg=sum/n;
+        double var_sum=0;
+        for(int i=0;i<n;i++)
+        {
+            double diff=a[i]-avg;
+            var_sum+=diff*diff;
+        }
+        double variance=var_sum/n;
+        printf("%lld %.3f\n",maxv-minv,variance);
+    }
+}
+    

@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+    int L,M;
+    scanf("%d %d",&L,&M);
+    int tree[10005]={0};
+    int i,j;
+    for(i=0;i<=L;i++)
+    {
+        tree[i]=1;
+    }
+    for(i=1;i<=M;i++)
+    {
+        int l,r;
+        scanf("%d %d",&l,&r);
+        for(j=l;j<=r;j++)
+        {
+            tree[j]=0;
+        }
+    }
+    int ans=0;
+    for(i=0;i<=L;i++)
+    {
+        if(tree[i]==1)
+            ans++;
+    }
+    printf("%d",ans);
+}

@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int n,x;
+    scanf("%d %d",&n,&x);
+    int cnt=0;
+    for(int i=1;i<=n;i++)
+    {
+        int temp=i;
+        while(temp!=0)
+        {
+            int dight=temp%10;
+            if(dight==x)cnt++;
+            temp=temp/10;
+        }
+    }
+    printf("%d",cnt);
+}

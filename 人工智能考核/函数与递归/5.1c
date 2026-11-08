@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int L,R;
+    scanf("%d %d",&L,&R);
+    int cnt=0;
+    for(int i=L;i<=R;i++)
+    {
+        int num=i;
+        while(num>0)
+        {
+            int digit=num%10;
+            if(digit==2)
+            {
+                cnt++;
+            }
+            num=num/10;
+        }
+    }
+    printf("%d",cnt);
+}
+            

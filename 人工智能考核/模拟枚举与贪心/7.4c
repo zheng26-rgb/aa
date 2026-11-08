@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<string.h>
+char s[100010];
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    while(T--)
+    {
+        scanf("%s",s);
+        int i=0;
+        int len=strlen(s);
+        while(i<len)
+        {
+            if(s[i]=='z'&&i+3<len&&s[i+1]=='e'&&s[i+2]=='r'&&s[i+3]=='o')
+            {
+                putchar('0');
+                i+=4;
+            }
+            else if(s[i]=='t'&&i+2<len&&s[i+1]=='w'&&s[i+2]=='o')
+            {
+                putchar('2');
+                i+=3;
+            }
+            else if(s[i]=='f'&&i+3<len&&s[i+1]=='o'&&s[i+2]=='u'&&s[i+3]=='r')
+            {
+                putchar('4');
+                i+=4;
+            }
+            else if(s[i]=='s'&&i+2<len&&s[i+1]=='i'&&s[i+2]=='x')
+            {
+                putchar('6');
+                i+=3;
+            }
+            else if(s[i]=='n'&&i+2<len&&s[i+1]=='i'&&s[i+2]=='n'&&s[i+3]=='e')
+            {
+                putchar('9');
+                i+=4;
+            }
+            else if(s[i]=='0'||s[i]=='2'||s[i]=='4'||s[i]=='6'||s[i]=='9')
+            {
+                putchar(s[i]);
+                i++;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        putchar('\n');
+    }
+}

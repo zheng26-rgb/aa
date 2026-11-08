@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+int cmp(const void*a,const void*b)
+{
+    long long*x=(long long*)a;
+    long long*y=(long long*)b;
+    return *y-*x;
+}
+int main()
+{
+    int n,k;
+    scanf("%d %d",&n,&k);
+    int a[100000],b[100000];
+    long long diff[100000];
+    long long sum=0;
+    for(int i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&b[i]);
+        sum+=b[i];
+        diff[i]=a[i]-b[i];
+    }
+    qsort(diff,n,sizeof(long long),cmp);
+    for(int i=0;i<k;i++)
+        sum+=diff[i];
+    printf("%lld\n",sum);
+}
